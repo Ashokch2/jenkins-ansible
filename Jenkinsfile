@@ -11,7 +11,7 @@ pipeline{
  }
  stage('AnsibleExecution'){
   steps{
-     ansiblePlaybook credentialsId: 'ansible_Server', installation: 'ansible', inventory: 'dhost.inv', playbook: 'apache.yml', vaultTmpPath: ''  
+     ansiblePlaybook credentialsId: 'ansible_Server', disableHostKeyChecking: true, installation: 'ansible', inventory: 'dhost.inv', playbook: 'apache.yml', vaultTmpPath: ''  
       }
     }
 }
